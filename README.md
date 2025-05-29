@@ -31,9 +31,7 @@ db.products.insertMany([
     '9': ObjectId('683839af09e21a79c8e563ae')
   }
 }
-db.products.aggregate({})
-MongoServerError[Location40323]: A pipeline stage specification object must contain exactly one field.
-db.products.aggregate([
+1. db.products.aggregate([
   {$match:{
 		category: "Electronics"
 }
@@ -124,7 +122,7 @@ db.products.aggregate([
     location: 'USA'
   }
 }
-db.products.aggregate([
+2. db.products.aggregate([
   {
 		$group : {
 				_id: "$category",
@@ -155,7 +153,7 @@ db.products.aggregate([
   _id: 'Sports',
   count: 1
 }
-db.products.aggregate([
+3. db.products.aggregate([
   {
 		$project : {
 			_id:0,
